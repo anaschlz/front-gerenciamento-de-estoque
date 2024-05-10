@@ -51,7 +51,7 @@ const ModalComp = ({ product, setProducts, isOpen, onClose}: Props) => {
         await axios.post(`https://api-gerenciamento-de-estoque.vercel.app/api/data/${product.product_id}/`, data);
       }
 
-      const response = await axios.get("https://api-gerenciamento-de-estoque.vercel.app/api/");
+      const response = await axios.get("https://api-gerenciamento-de-estoque.vercel.app/api/product/");
       setProducts(response.data);
 
       onClose();
@@ -64,7 +64,7 @@ const ModalComp = ({ product, setProducts, isOpen, onClose}: Props) => {
     try {
       await axios.delete(`https://api-gerenciamento-de-estoque.vercel.app/api/data/${product.product_id}/`);
 
-      const response = await axios.get("https://api-gerenciamento-de-estoque.vercel.app/api/");
+      const response = await axios.get("https://api-gerenciamento-de-estoque.vercel.app/api/product/");
       setProducts(response.data);
 
       onClose();

@@ -37,7 +37,7 @@ const App = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("https://api-gerenciamento-de-estoque.vercel.app/api/");
+        const response = await axios.get("https://api-gerenciamento-de-estoque.vercel.app/api/product/");
         setProducts(response.data);
       } catch (error) {
         console.error("Error fetching products:", error);
